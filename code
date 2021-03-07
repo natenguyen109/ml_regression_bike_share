@@ -1,0 +1,8 @@
+#import data
+bike_data = pd.read_csv('data/daily-bike-share.csv')
+#import libraries
+import pandas as pd
+import matplotlib.pyplot as plt
+bike_data['day'] = pd.DatetimeIndex(bike_data['dteday']).day
+numeric_features = ['temp', 'atemp', 'hum', 'windspeed']
+bike_data[numeric_features + ['rentals']].describe()
